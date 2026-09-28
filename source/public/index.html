@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Event Shortlist · Find options for your event</title>
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/app.mjs"></script>
+</head>
+<body>
+  <header class="masthead"><a href="/" class="brand">es<span>Event Shortlist</span></a>
+    <span class="local">A local planning demo</span></header>
+  <main>
+    <div class="intro">
+      <p class="eyebrow">A clearer place to start</p>
+      <h1>Find options for your event</h1>
+      <p class="lede">Start with the facts. Compare a few possibilities.<br>
+        Know what to ask next.</p>
+      <p class="disclosure">Demo data · Fictional vendors and sample USD starting prices · No booking</p>
+    </div>
+    <div class="workspace">
+      <section class="brief-panel" aria-labelledby="brief-heading">
+        <div class="section-title"><span class="step">01</span><h2 id="brief-heading">Your event brief</h2></div>
+        <form id="brief">
+          <fieldset id="fields" disabled>
+            <legend class="sr-only">Event requirements</legend>
+            <label for="location">Location</label><select id="location" name="locationId" required></select>
+            <div class="pair">
+              <div><label for="date">Event date</label>
+                <input id="date" name="date" type="date" required
+                  min="2026-09-23" max="2026-12-31" value="2026-10-17" aria-describedby="date-hint"></div>
+              <div><label for="eventType">Event type</label><select id="eventType" name="eventType" required></select></div>
+            </div>
+            <p class="hint" id="date-hint">Fixed sample calendar: Sep 23–Dec 31, 2026.</p>
+            <label for="category">Service category</label><select id="category" name="category" required></select>
+            <label for="budget">Maximum starting price <span>USD</span></label>
+            <input id="budget" name="budget" type="text" inputmode="decimal" value="2000"
+              required pattern="[0-9]+(\.[0-9]{1,2})?" aria-describedby="budget-hint">
+            <p id="budget-hint" class="hint">$0.01–$1,000,000 · Up to two decimal places.</p>
+            <div class="pair">
+              <div><label for="language">Service language <span>optional</span></label>
+                <select id="language" name="language"></select></div>
+              <div><label for="hours">On-site hours <span>optional</span></label>
+                <input id="hours" name="hours" type="number" min="0.01" max="24" step="any" value="4"></div>
+            </div>
+            <label for="style">Style wishes <span>optional</span></label>
+            <textarea id="style" name="style" rows="4" maxlength="4000"
+              aria-describedby="style-hint">Calm pacing and clear presentations, without party games.</textarea>
+            <p id="style-hint" class="hint">Up to 4,000 characters. These wishes still need confirmation.</p>
+            <button class="primary" type="submit">Find my shortlist <span aria-hidden="true">↗</span></button>
+          </fieldset>
+        </form>
+        <div class="examples" aria-label="Try a sample brief">
+          <span>Try the conference demo</span>
+          <button id="oct17" type="button" disabled>Oct 17</button>
+          <button id="oct18" type="button" disabled>Oct 18</button>
+        </div>
+        <p class="fine">Starting prices are illustrative minimums. Taxes, travel, overtime,
+          deposits and other fees are not calculated. Confirm availability and a final quote directly.</p>
+      </section>
+      <section class="results-panel" aria-labelledby="results-heading" aria-busy="false">
+        <div class="section-title"><span class="step">02</span><h2 id="results-heading">Your shortlist</h2>
+          <span class="tag">Up to 3 options</span></div>
+        <p id="status" role="status" aria-live="polite">Loading the local catalog…</p>
+        <div id="results"></div>
+      </section>
+    </div>
+    <footer>Two sample cities. One fixed calendar. A starting point for a conversation.</footer>
+  </main>
+</body>
+</html>
