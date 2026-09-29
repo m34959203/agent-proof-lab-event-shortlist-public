@@ -8,27 +8,23 @@ September 23–December 31, 2026.
 
 ## Start here
 
-The `source/` directory is the unchanged recorded correction checkpoint
-`268ce402655fd9a142d63fc13bb74178c568d904`. With Node 22.22.1:
+Choose one path:
 
-```sh
-cd source
-node --version
-npm run check
-npm start
-```
+- **Run the finished app:** [START-HERE.md](START-HERE.md) covers prerequisites,
+  PowerShell commands, a separate local model, checks, examples and common errors.
+- **Build your own version:** [BUILD-ALONG.md](BUILD-ALONG.md) creates a separate
+  exercise with the brief, fictional catalog and disclosed prompt adaptation,
+  without copying the finished app.
 
-Open `http://127.0.0.1:3000`. No application dependencies are installed by these
-commands. A working recommendation additionally requires the exact local
-Ollama/model profile in [MODEL-SETUP.md](MODEL-SETUP.md). Starting this app does
-not download or configure that model. Without it, expect an explicit model
-error, not working AI results. The model was subsequently downloaded into an
-empty, separate store and checked with this source; the already-installed
-runtime was reused. See MODEL-SETUP.md for the exact boundary of that check.
+These guides were added after filming to fill gaps in the walkthrough. They
+are not a claim that every setup command appeared on screen. Running the source
+and building a new version from prompts are different checks.
 
-Try the October 17 example, then October 18. Return to October 17 and compare
-a maximum starting price of $825.00 with $824.99. Inspect the source description,
-eligibility facts, unverified wishes and questions to ask the vendor.
+The `source/` directory remains the recorded correction checkpoint
+`268ce402655fd9a142d63fc13bb74178c568d904`. This is a provenance identifier, not
+a commit that necessarily exists in this companion repository. Starting the
+page without configuring the exact model is not a working recommendation.
+See [MODEL-SETUP.md](MODEL-SETUP.md) for the model profile and limitations.
 
 ## Follow the development
 
@@ -36,6 +32,8 @@ eligibility facts, unverified wishes and questions to ask the vendor.
   failures, corrections and reproduction limits.
 - [VERIFICATION.md](VERIFICATION.md): what was checked after the coding sessions
   and what has not been established.
+- [REPAIR-VERIFICATION.md](REPAIR-VERIFICATION.md): the later setup repair,
+  fresh-seed reconstruction, observed failures and exact limits of those checks.
 - `source/BRIEF.md`: the adapted product contract, including US01–US14.
 - `source/README.md`: API, exact model profile, configuration and source details.
 - `source/CHANGELOG.md`: original and correction-session history.
@@ -56,5 +54,5 @@ distinguished. It is not an uninterrupted recording of typing every line.
 The publishing maintainer provides this project under the [MIT License](LICENSE)
 to the extent they hold rights. See [license scope](LICENSE-SCOPE.md) for the
 AI-assisted provenance and external prerequisites. This grants no production
-readiness or third-party endorsement. The archive remains an unpublished review
-candidate until its exact distribution and publication checks are recorded.
+readiness or third-party endorsement. File hashes identify this snapshot;
+publishing source code is not a certification of production readiness.
